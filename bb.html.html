@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Convite para Sair</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quer sair comigo?</h1>
+    <button id="naoBtn">Não</button>
+    <button id="simBtn">Sim</button>
+
+    <div id="mensagem" style="display: none;">
+        <h2>Nossa, pq? </h2>
+        <p>Fiquei triste 😪😭😭😭😭😭😭😭</p>
+    </div>
+
+    <div id="local" style="display: none;">
+        <h2>Escolha um local</h2>
+        <input type="text" id="localInput" placeholder="Informe o local">
+        <button id="enviarLocalBtn">Enviar</button>
+    </div>
+
+    <script>
+        const naoBtn = document.getElementById("naoBtn");
+        const simBtn = document.getElementById("simBtn");
+        const mensagemDiv = document.getElementById("mensagem");
+        const localDiv = document.getElementById("local");
+        const enviarLocalBtn = document.getElementById("enviarLocalBtn");
+
+        naoBtn.addEventListener("click", function () {
+            mensagemDiv.style.display = "block";
+        });
+
+        simBtn.addEventListener("click", function () {
+            localDiv.style.display = "block";
+        });
+
+        enviarLocalBtn.addEventListener("click", function () {
+            const local = document.getElementById("localInput").value;
+            const whatsappMessage = `o role que eu quero é" ${local}`;
+            const whatsappLink = `https://wa.me/11937781104?text=${encodeURIComponent(whatsappMessage)}`;
+            window.location.href = whatsappLink;
+        });
+    </script>
+</body>
+</html>
+ 
